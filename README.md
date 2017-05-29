@@ -1,4 +1,4 @@
-# Config
+# Dotfiles
 
 Configuration files for my personal development environment setup
 
