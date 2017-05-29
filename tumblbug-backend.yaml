@@ -1,0 +1,15 @@
+# ~/.tmuxp/tumblbug-backend.yaml
+
+session_name: tumblbug-backend
+start_directory: '~/workspace/backend'
+windows:
+- layout: main-vertical
+  options:
+    main-pane-width: 200
+  panes:
+    - shell_command:
+      - v
+      focus: true
+    -
+    - docker-compose down && docker-sync-stack start
+
