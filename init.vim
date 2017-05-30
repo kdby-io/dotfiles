@@ -4,6 +4,15 @@ language en_US
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+filetype plugin indent on " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+
+
+"
+" Plugin
+"
 call plug#begin('~/.dotfiles/nvim/bundle')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -42,9 +51,18 @@ Plug 'ervandew/supertab'
 call plug#end()
 
 
-filetype plugin indent on " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+
+"
+" UI Config
+"
+set number relativenumber title ruler
+set showcmd laststatus=2
+set showmatch
+set wildmenu
+
+" More natural split opening
+set splitbelow
+set splitright
 
 " color
 syntax enable
@@ -52,29 +70,38 @@ set background=dark
 colorscheme dracula
 set t_Co=256
 
+
+
 " Indent
 set autoindent cindent expandtab
 set softtabstop=2 shiftwidth=2
 set list
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
-" UI Config
-set number relativenumber title ruler
-set showcmd laststatus=2
-set showmatch
-set wildmenu
 
+
+"
 " Mapping
+"
 let mapleader=","
 nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree 
+nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree
 map <C-t> :FZF<CR>
 
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+
+" Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+
 
 " Searching
 set hlsearch incsearch
@@ -82,6 +109,7 @@ nnoremap <ESC> :noh<CR><ESC>
 
 set autoread
 set encoding=utf8
+
 
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
@@ -93,10 +121,12 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
 " Airline
 let g:airline#extensions#tabline#enabled =1 " turn on buffer list
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
+
 
 " Vim-devicon
 let g:webdevicons_enable = 1
@@ -108,10 +138,12 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
+
 " Vim-nerdtree-syntax-highlight
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
 
 " NERDcomment
 " Add spaces after comment delimiters by default
@@ -127,9 +159,11 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+
 " Neomake
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
+
 
 " flowtype
 " Temporal disable
@@ -137,6 +171,7 @@ let g:flow#enable = 1
 let g:javascript_plugin_flow = 1
 let g:flow#omnifunc = 0
 let g:flow#autoclose = 1
+
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -147,5 +182,7 @@ let g:deoplete#sources#omni#input_patterns = {
 \}
 
 autocmd! BufWritePost * Neomake
+
+
 " fugitive
 autocmd QuickFixCmdPost *grep* cwindow
