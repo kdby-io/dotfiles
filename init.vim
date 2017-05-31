@@ -15,6 +15,7 @@ filetype plugin indent on " required
 "
 call plug#begin('~/.dotfiles/nvim/bundle')
 
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'yssl/QFEnter'
 
@@ -88,6 +89,9 @@ nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree
 map <C-t> :FZF<CR>
+
+" Avoid ESC
+:imap jk <Esc>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
