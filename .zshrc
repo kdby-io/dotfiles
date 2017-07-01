@@ -8,7 +8,7 @@ export ZSH=/Users/v/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -121,3 +121,6 @@ eval "$(pyenv virtualenv-init -)"
 # nvm
 export NVM_DIR="/Users/v/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+source "/Users/v/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
