@@ -16,36 +16,46 @@ filetype plugin indent on " required
 call plug#begin('~/.dotfiles/nvim/bundle')
 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'yssl/QFEnter'
 
+" airline
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" theme
 Plug 'dracula/vim'
 
+" git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+" linter
 Plug 'neomake/neomake'
 Plug 'ngmy/vim-rubocop'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
 Plug 'osyo-manga/vim-monster', { 'for': 'ruby' }
+" Plug 'mhartington/nvim-typescript'
 
 Plug 'ervandew/supertab'
 
@@ -88,7 +98,7 @@ let mapleader=","
 nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree
-map <C-t> :FZF<CR>
+map <C-w> :FZF<CR>
 
 " Avoid ESC
 :imap jk <Esc>
