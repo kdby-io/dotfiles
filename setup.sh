@@ -18,6 +18,8 @@ ln -sf $PWD/init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.tmuxp
 ln -sf $PWD/tumblbug-backend.yaml ~/.tmuxp/tumblbug-backend.yaml # tumblbug backend
 
+## Hyper
+ln -sf $PWD/.hyper.js ~/.hyper.js
 
 # Restart
 source ~/.zshrc
