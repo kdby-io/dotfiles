@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: '"Knack Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -38,7 +38,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    padding: '12px 14px 18px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -98,6 +98,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyper-pokemon",
+    "hyperline",
   ],
 
   // in development, you can create a directory under
