@@ -38,24 +38,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " linter
-Plug 'neomake/neomake'
-Plug 'ngmy/vim-rubocop'
-Plug 'benjie/neomake-local-eslint.vim'
-Plug 'flowtype/vim-flow'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'w0rp/ale'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 
+" auto-complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
-Plug 'osyo-manga/vim-monster', { 'for': 'ruby' }
-" Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript'
+
+" syntax-highlight
+Plug 'leafgarland/typescript-vim'
 
 Plug 'ervandew/supertab'
 
@@ -138,6 +133,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Airline
 let g:airline#extensions#tabline#enabled =1 " turn on buffer list
+let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 
@@ -174,28 +170,12 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 
-" Neomake
-let g:neomake_ruby_enabled_makers = ['rubocop']
-let g:neomake_javascript_enabled_makers = ['eslint']
-
-
-" flowtype
-" Temporal disable
-let g:flow#enable = 1
-let g:javascript_plugin_flow = 1
-let g:flow#omnifunc = 0
-let g:flow#autoclose = 1
+" Ale
+let g:ale_echo_msg_format = '[%linter%] %s'
 
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
-let g:deoplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
-
-autocmd! BufWritePost * Neomake
 
 
 " fugitive
