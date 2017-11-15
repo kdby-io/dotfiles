@@ -1,5 +1,3 @@
-" ~/.config/nvim/init.vim
-
 language en_US
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -9,16 +7,14 @@ filetype plugin indent on " required
 "filetype plugin on
 
 
-
 "
 " Plugin
 "
-call plug#begin('~/.dotfiles/nvim/bundle')
+call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'yssl/QFEnter'
 
 " airline
 Plug 'bling/vim-airline'
@@ -35,24 +31,23 @@ Plug 'dracula/vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " linter
 Plug 'w0rp/ale'
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'terryma/vim-multiple-cursors'
 
 " auto-complete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'mhartington/nvim-typescript'
+Plug 'valloric/youcompleteme'
+Plug 'ervandew/supertab'
 
 " syntax-highlight
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -61,7 +56,7 @@ call plug#end()
 "
 " UI Config
 "
-set number relativenumber title ruler
+set number title ruler
 set showcmd laststatus=2
 set showmatch
 set wildmenu
@@ -81,7 +76,7 @@ set t_Co=256
 " Indent
 set autoindent cindent expandtab
 set softtabstop=2 shiftwidth=2
-set list
+set nolist
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
 
@@ -93,10 +88,7 @@ let mapleader=","
 nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree
-map <C-w> :FZF<CR>
-
-" Avoid ESC
-:imap jk <Esc>
+map <C-t> :FZF<CR>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -114,7 +106,7 @@ noremap <Right> <NOP>
 
 " Searching
 set hlsearch incsearch
-nnoremap <ESC> :noh<CR><ESC>
+nnoremap <silent><leader>/ :noh<CR><ESC>
 
 set autoread
 set encoding=utf8
@@ -122,6 +114,7 @@ set encoding=utf8
 
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
+let NERDTreeShowHidden=1
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -157,17 +150,17 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 " NERDcomment
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+" let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+" let g:NERDCompactSexyComs = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
+" let g:NERDDefaultAlign = 'left'
 " Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 " Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
+" let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+" let g:NERDTrimTrailingWhitespace = 1
 
 
 " Ale
@@ -175,9 +168,7 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_open_list = 1
 
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-
-
 " fugitive
-autocmd QuickFixCmdPost *grep* cwindow
+" autocmd QuickFixCmdPost *grep* cwindow
+
+

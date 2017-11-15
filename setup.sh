@@ -10,9 +10,8 @@ ln -sf $PWD/.zshrc ~/.zshrc
 ## Tmux
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
 
-## Neovim
-mkdir -p ~/.config/nvim
-ln -sf $PWD/init.vim ~/.config/nvim/init.vim
+## Vim
+ln -sf $PWD/.vimrc ~/.vimrc
 
 ## Tmuxp
 mkdir -p ~/.tmuxp

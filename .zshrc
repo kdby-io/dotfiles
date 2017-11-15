@@ -1,7 +1,5 @@
 # ~/.zshrc
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/v/.oh-my-zsh
 
@@ -97,8 +95,8 @@ KEYTIMEOUT=1
 autoload -U promptinit; promptinit
 prompt pure
 
-# Neovim
-alias v="nvim"
+# Vim
+alias vi="vim"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -126,4 +124,7 @@ eval "$(pyenv virtualenv-init -)"
 # nvm
 export NVM_DIR="/Users/v/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
