@@ -143,10 +143,15 @@ let g:DevIconsEnableFoldersOpenClose = 1
 
 
 " Vim-nerdtree-syntax-highlight
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-
+" let g:NERDTreeDisableExactMatchHighlight = 1
+" let g:NERDTreeDisablePatternMatchHighlight = 1
+let g:NERDTreeSyntaxDisableDefaultExtensions = 1
+let g:NERDTreeSyntaxEnabledExtensions = [
+  \ 'json',
+  \ 'md',
+  \ 'js', 'jsx',
+  \ 'ts', 'tsx'
+  \ ]
 
 " NERDcomment
 " Add spaces after comment delimiters by default
