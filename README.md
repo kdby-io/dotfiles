@@ -15,7 +15,7 @@ zsh required.
 **Warning:** If you already have your own configuration files for above applications, this shell script will overwrite them.
 
 ```sh
-git clone https://github.com/pueue/dotfiles
+git clone https://github.com/gloorx/dotfiles
 cd dotfiles
 chmod +x ./setup.sh
 zsh setup.sh
