@@ -15,10 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" airline
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " nerdtree
 Plug 'scrooloose/nerdtree'
@@ -27,7 +24,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " theme
-Plug 'dracula/vim'
+Plug 'arcticicestudio/nord-vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -68,9 +65,8 @@ set splitright
 " color
 syntax enable
 set background=dark
-colorscheme dracula
+colorscheme nord
 set t_Co=256
-
 
 
 " Indent
@@ -124,12 +120,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-" Airline
-let g:airline#extensions#tabline#enabled =1 " turn on buffer list
-let g:airline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'dracula'
-
+"lightline
+let g:lightline = { 'colorscheme': 'nord' }
 
 " Vim-devicon
 let g:webdevicons_enable = 1
@@ -138,8 +130,6 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
 
 
 " Vim-nerdtree-syntax-highlight
@@ -174,9 +164,4 @@ let g:ale_open_list = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-
-
-" fugitive
-" autocmd QuickFixCmdPost *grep* cwindow
-
 
