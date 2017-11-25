@@ -8,6 +8,7 @@ PWD=`pwd`
 ln -sf $PWD/.zshrc ~/.zshrc
 
 ## Tmux
+git clone https://github.com/tmux-plugins/tpm $PWD/.tmux/plugins/tpm
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
 
 ## Vim
