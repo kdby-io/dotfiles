@@ -128,3 +128,5 @@ export NVM_DIR="/Users/v/.nvm"
 
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
+
+neofetch
