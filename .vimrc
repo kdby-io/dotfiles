@@ -20,7 +20,7 @@ Plug 'itchyny/lightline.vim'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " theme
@@ -38,13 +38,15 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'terryma/vim-multiple-cursors'
 
 " auto-complete
-Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme', { 'dir': '~/.vim/bundle/YouCompleteMe', 'do': './install.py' }
 Plug 'ervandew/supertab'
 
 " syntax-highlight
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'plasticboy/vim-markdown'
 
+Plug 'Quramy/tsuquyomi'
 
 call plug#end()
 
@@ -84,7 +86,7 @@ let mapleader=","
 nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR> " find current open file in NERDTree
-map <C-t> :FZF<CR>
+imap <C-c> <Esc>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -124,17 +126,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:lightline = { 'colorscheme': 'nord' }
 
 " Vim-devicon
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_airline_statusline = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:webdevicons_enable_airline_tabline = 1
+" let g:webdevicons_enable_airline_statusline = 1
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 
 " Vim-nerdtree-syntax-highlight
 " let g:NERDTreeDisableExactMatchHighlight = 1
 " let g:NERDTreeDisablePatternMatchHighlight = 1
+let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 let g:NERDTreeSyntaxEnabledExtensions = [
   \ 'json',
@@ -165,3 +168,8 @@ let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" Tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
