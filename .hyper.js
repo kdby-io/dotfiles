@@ -17,6 +17,8 @@ module.exports = {
       blurredColors: ['#1b4f99', '#fff']
     },
 
+    backgroundColor: '#2e3440',
+
     // custom css to embed in the main window
     css: '',
 
@@ -35,7 +37,7 @@ module.exports = {
 
     // custom padding (css format, i.e.: `top right bottom left`)
     // for hyperline
-    // padding: '12px 14px 18px 14px',
+    padding: '12px 14px 18px 14px',
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
