@@ -1,7 +1,7 @@
 # ~/.zshrc
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/v/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -99,34 +99,22 @@ prompt pure
 alias vi="vim"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# mysql5.6
-export PATH="/usr/local/opt/mysql@5.6/bin:${PATH}"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # thefuck
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias FUCK)"
 
-# rbenv
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # nvm
-export NVM_DIR="/Users/v/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # yarn
-export PATH="$HOME/.yarn/bin:$PATH"
-
-neofetch
+# export PATH="$HOME/.yarn/bin:$PATH"
