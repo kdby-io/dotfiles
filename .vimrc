@@ -43,7 +43,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'terryma/vim-multiple-cursors'
 
 " auto-complete
-Plug 'valloric/youcompleteme', { 'dir': '~/.vim/bundle/YouCompleteMe', 'do': './install.py' }
+" Plug 'valloric/youcompleteme', { 'dir': '~/.vim/bundle/YouCompleteMe', 'do': './install.py' }
 Plug 'ervandew/supertab'
 
 " syntax-highlight
@@ -51,7 +51,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 
 call plug#end()
 
