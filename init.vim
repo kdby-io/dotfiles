@@ -10,7 +10,12 @@ filetype plugin indent on " required
 "
 " Plugin
 "
-call plug#begin('~/.vim/plugged')
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
@@ -20,7 +25,7 @@ Plug 'itchyny/lightline.vim'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " theme
@@ -38,7 +43,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'terryma/vim-multiple-cursors'
 
 " auto-complete
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'ervandew/supertab'
 
 " syntax-highlight
@@ -124,12 +129,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:lightline = { 'colorscheme': 'nord' }
 
 " Vim-devicon
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_airline_statusline = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:webdevicons_enable_airline_tabline = 1
+" let g:webdevicons_enable_airline_statusline = 1
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 
 " Vim-nerdtree-syntax-highlight

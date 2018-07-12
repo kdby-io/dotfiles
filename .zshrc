@@ -96,7 +96,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Vim
-alias vi="vim"
+alias v="nvim"
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -118,3 +118,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # yarn
 # export PATH="$HOME/.yarn/bin:$PATH"
+
+alias git=hub

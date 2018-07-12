@@ -10,9 +10,10 @@ brew install tmux
 git clone https://github.com/tmux-plugins/tpm $PWD/.tmux/plugins/tpm
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
 
-## vim
-brew install vim
-ln -sf $PWD/.vimrc ~/.vimrc
+## neovim
+brew install neovim
+mkdir -p ~/.config/nvim
+ln -sf $PWD/init.vim ~/.config/nvim/init.vim
 
 ## zsh
 brew install zsh zsh-completions
