@@ -80,6 +80,7 @@ set softtabstop=2 shiftwidth=2
 set nolist
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
+highlight Comment cterm=italic
 
 
 "
