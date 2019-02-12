@@ -120,3 +120,4 @@ export NVM_DIR="$HOME/.nvm"
 # export PATH="$HOME/.yarn/bin:$PATH"
 
 alias git=hub
+alias dc=docker-compose
