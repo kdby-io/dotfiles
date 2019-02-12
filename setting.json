@@ -1,0 +1,31 @@
+// for VSCode
+
+{
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "terminal.integrated.fontSize": 15,
+  "wallaby.node": "/Users/pueue/.nvm/versions/node/v11.9.0/bin/node",
+  "window.zoomLevel": 0,
+  "editor.fontLigatures": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "comment.line.double-slash",
+          "punctuation.definition.comment",
+        ],
+        "settings": {
+          "fontStyle": "italic",
+          // "fontStyle": "italic underline",
+          // "fontStyle": "italic bold underline",
+        }
+      },
+    ]
+  },
+}
