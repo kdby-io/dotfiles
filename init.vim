@@ -2,6 +2,7 @@
 "========================= General Config ==============================
 
 set nocompatible              "disable compatible with old vi
+set shell=/usr/local/bin/zsh
 filetype plugin on            "load filetype plugin files
 filetype indent on            "set different indent by filetype
 
@@ -80,12 +81,18 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'benmills/vimux'
 
-" nerdtree
+"----- nerdtree -----
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 Plug 'airblade/vim-gitgutter'
+Plug 'Shougo/denite.nvim'
+
+"----- typescript -----
+Plug 'HerringtonDarkholme/yats.vim'   "syntax file
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}  "auto completion
 
 call plug#end()
 
