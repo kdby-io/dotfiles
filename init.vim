@@ -10,7 +10,6 @@ let g:mapleader = ","         "set leader key to comma
 
 set title                     "change terminal title
 
-
 "============================ UI Config ================================
 
 set ruler                     "show the ruler on the right bottom
@@ -54,6 +53,9 @@ nnoremap <silent><leader>/ :noh<CR><ESC>
 "open neovim setting
 nnoremap <Leader>rc :rightbelow vnew $MYVIMRC<CR>
 
+"toggle NERDTree
+nnoremap <Leader>f :NERDTreeToggle<CR>
+
 "navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -85,34 +87,34 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"----- auto completion -----
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/denite.nvim'
 
+"----- theme -----
+Plug 'morhetz/gruvbox'
+
 "----- typescript -----
 Plug 'HerringtonDarkholme/yats.vim'   "syntax file
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}  "auto completion
 
 call plug#end()
 
 
-
 set wildmenu
 "syntax enable
-"set background=dark
-"colorscheme nord
-"set t_Co=256
-
 "highlight Comment cterm=italic
 
 
 "========================== Plugin Settings ============================
 
 "----- NERDTree -----
-"toggle NERDTree
-nnoremap <Leader>f :NERDTreeToggle<CR>
 
-"----- Deoplete -----
-let g:deoplete#enable_at_startup = 1
+
+"============================== Theme ==================================
+
+colorscheme gruvbox
+set background=dark
+set termguicolors
 

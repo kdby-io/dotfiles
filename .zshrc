@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -90,13 +90,8 @@ source $ZSH/oh-my-zsh.sh
 
 KEYTIMEOUT=1
 
-# pure-prompt
-# npm install --global pure-prompt
-autoload -U promptinit; promptinit
-prompt pure
-
-# Vim
 alias v="nvim"
+alias ls="lsd"
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -118,6 +113,34 @@ export NVM_DIR="$HOME/.nvm"
 
 # yarn
 # export PATH="$HOME/.yarn/bin:$PATH"
+
+# Just comment a section if you want to disable it
+SPACESHIP_PROMPT_ORDER=(
+  time        # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package     # Package version
+  node          # Node.js section
+  golang        # Go section
+  php           # PHP section
+  # rust          # Rust section
+  docker      # Docker section
+  aws           # Amazon Web Services section
+  venv          # virtualenv section
+  pyenv         # Pyenv section
+  # kubecontext   # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode     # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+  )
+
 
 alias git=hub
 alias dc=docker-compose
