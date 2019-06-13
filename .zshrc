@@ -52,6 +52,7 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
   vi-mode
@@ -106,6 +107,9 @@ eval "$(thefuck --alias FUCK)"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+# activate z
+. /usr/local/etc/profile.d/z.sh
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -144,3 +148,4 @@ SPACESHIP_PROMPT_ORDER=(
 
 alias git=hub
 alias dc=docker-compose
+
