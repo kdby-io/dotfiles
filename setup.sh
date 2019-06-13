@@ -1,20 +1,18 @@
 #!/bin/sh
 
-PWD=`pwd`
-
 #--------------- Homebrew ---------------
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
 #----------------- tmux -----------------
 brew install tmux
-git clone https://github.com/tmux-plugins/tpm $PWD/.tmux/plugins/tpm
-ln -sf $PWD/.tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ./.tmux/plugins/tpm
+ln -sf ./.tmux.conf ~/.tmux.conf
 
 
 #-------------- oh-my-zsh ---------------
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -sf $PWD/.zshrc ~/.zshrc
+ln -sf ./.zshrc ~/.zshrc
 
 
 # spaceship-prompt
@@ -38,7 +36,7 @@ brew install thefuck
 #---------------- neovim ----------------
 brew install neovim
 mkdir -p ~/.config/nvim
-ln -sf $PWD/init.vim ~/.config/nvim/init.vim
+ln -sf ./init.vim ~/.config/nvim/init.vim
 
 
 #----------------- lsd ------------------

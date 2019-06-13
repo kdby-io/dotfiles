@@ -149,3 +149,10 @@ SPACESHIP_PROMPT_ORDER=(
 alias git=hub
 alias dc=docker-compose
 
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
