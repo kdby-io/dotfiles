@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Operator Mono Lig", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Operator Mono Lig", "Fira Code", "Hack Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -125,7 +125,9 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
     hyperBorder: {
-      animate: true,
+      animate: false,
+      borderColors: ['#1D976C', '#93F9B9'],
+      blurredColors: ['#177C59', '#84E0A6'],
       // borderColors: ['#1b4f99', '#fff'],
       // blurredColors: ['#1b4f99', '#fff'],
       // borderWidth: '5px',
@@ -138,7 +140,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperborder', "hyper-solarized-light"],
+  plugins: ['hyperminimal', 'hyperborder', 'hyperterm-gruvbox-dark'],
 
 
   // in development, you can create a directory under
