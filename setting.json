@@ -2,7 +2,7 @@
 
 {
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Operator Mono Lig, Fira Code, Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "terminal.integrated.fontSize": 15,
   "wallaby.node": "/Users/pueue/.nvm/versions/node/v11.9.0/bin/node",
