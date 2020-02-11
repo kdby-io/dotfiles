@@ -4,21 +4,20 @@ Configuration files for my personal development environment setup
 
 ## Applications
 
-- [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [Fish shell](https://https://fishshell.com/)
 - [Tmux](https://tmux.github.io/)
 - [Tmuxp](https://github.com/tony/tmuxp)
 - vim
 
 ## Installation
 
-zsh required.  
 **Warning:** If you already have your own configuration files for above applications, this shell script will overwrite them.
 
 ```sh
 git clone https://github.com/pueue/dotfiles
 cd dotfiles
 chmod +x ./setup.sh
-zsh setup.sh
+./setup.sh
 ```
 
 ## Symbolic link

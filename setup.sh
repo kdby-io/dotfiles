@@ -21,8 +21,20 @@ git clone https://github.com/tmux-plugins/tpm ./.tmux/plugins/tpm
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
 
 
-#----------------- zsh ------------------
-brew install zsh
+#----------------- fish ------------------
+brew install fish
+curl -L https://get.oh-my.fish | fish
+omf install bass
+
+#-------------- fish theme ---------------
+omf install pure
+chsh -s $(which fish)
+# https://github.com/rafaelrinaldi/pure/wiki/Oh-My-Fish-not-currently-supporting-conf.d-snippets-in-plugins-and-themes
+ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish
+ln -sf $PWD/fish/config.fish ~/.config/fish/config.fish
+ln -sf $PWD/fish/functions/fuck.fish ~/.config/fish/functions/fuck.fish
+ln -sf $PWD/fish/functions/nvm.fish ~/.config/fish/functions/nvm.fish
+omf theme pure
 
 #-=------------- thefuck ----------------
 brew install thefuck
@@ -35,39 +47,5 @@ ln -sf $PWD/init.vim ~/.config/nvim/init.vim
 #----------------- lsd ------------------
 brew install lsd
 
-#------------------ z -------------------
-brew install z
-
-#-------------- oh-my-zsh ---------------
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "$(tput setaf 3)Installing oh-my-zsh.$(tput sgr 0)"
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-  echo "$(tput setaf 2)oh-my-zsh already installed.$(tput sgr 0)"
-fi
-ln -sf $PWD/.zshrc ~/.zshrc
-
-
-# spaceship-prompt
-git clone https://github.com/denysdovhan/spaceship-prompt.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/themes/spaceship-prompt
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
-# zsh-completions
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-chsh -s $(which zsh)
-
-source ~/.zshrc
-
-
-#---------------- hyper -----------------
-brew update
-brew cask install hyper
-
-echo "$(tput setaf 2)Enjoy :)$(tput sgr 0)"
+#----------------- hub ------------------
+brew install hub
