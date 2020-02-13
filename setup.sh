@@ -31,13 +31,19 @@ omf install pure
 chsh -s $(which fish)
 # https://github.com/rafaelrinaldi/pure/wiki/Oh-My-Fish-not-currently-supporting-conf.d-snippets-in-plugins-and-themes
 ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish
+ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish
 ln -sf $PWD/fish/config.fish ~/.config/fish/config.fish
 ln -sf $PWD/fish/functions/fuck.fish ~/.config/fish/functions/fuck.fish
 ln -sf $PWD/fish/functions/nvm.fish ~/.config/fish/functions/nvm.fish
 omf theme pure
+omf install pj
+omf install z
 
-#-=------------- thefuck ----------------
+#--------------- thefuck ----------------
 brew install thefuck
+
+#---------------- yarn ------------------
+brew install yarn
 
 #---------------- neovim ----------------
 brew install neovim

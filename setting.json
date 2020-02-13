@@ -1,11 +1,10 @@
 // for VSCode
 
 {
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "editor.fontFamily": "Operator Mono Lig, Fira Code, Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "terminal.integrated.fontSize": 15,
-  "wallaby.node": "/Users/pueue/.nvm/versions/node/v11.9.0/bin/node",
   "window.zoomLevel": 0,
   "editor.fontLigatures": true,
   "editor.tokenColorCustomizations": {

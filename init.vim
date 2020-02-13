@@ -89,6 +89,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "----- auto completion -----
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier']
 
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/denite.nvim'
@@ -162,6 +163,6 @@ nmap <leader>rn <Plug>(coc-rename)
 "============================== Theme ==================================
 
 colorscheme gruvbox
-set background=dark
+set background=light
 set termguicolors
 
